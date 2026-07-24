@@ -43,6 +43,7 @@ create table appointments (
     doctor_id varchar(12) not null,
     appointment_date datetime not null,
     status varchar(30) not null,
+    appointment_type varchar(50) not null,
     constraint fk_appointment_patient foreign key (patient_id) references patients(patient_id),
     constraint fk_appointment_doctor foreign key (doctor_id) references employees(staff_id)
 );
@@ -66,6 +67,8 @@ create table payments (
     amount_paid decimal(10,2) not null,
     payment_date date not null,
     outstanding_balance decimal(10,2) not null,
+    description varchar(200) not null,
+    status varchar(20) not null,
     constraint fk_payment_patient foreign key (patient_id) references patients(patient_id)
 );
 
@@ -84,4 +87,5 @@ insert into patients values
 insert into employees values
 ('D2001', 'Nadia', 'Lewis', '876-555-2001', 'staff123', 'Outpatient Care', 'Doctor', 'General Medicine'),
 ('N3001', 'Tamara', 'Reid', '876-555-3001', 'staff123', 'Nursing', 'Nurse', null),
-('R4001', 'Kevin', 'Morgan', '876-555-4001', 'staff123', 'Front Desk', 'Receptionist', null);
+('R4001', 'Kevin', 'Morgan', '876-555-4001', 'staff123', 'Front Desk', 'Receptionist', null),
+('A5001', 'Simone', 'Clarke', '876-555-5001', 'admin123', 'Administration', 'Admin', null);

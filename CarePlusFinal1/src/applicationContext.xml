@@ -5,7 +5,12 @@
            http://www.springframework.org/schema/beans
            https://www.springframework.org/schema/beans/spring-beans.xsd">
 
-    <bean id="hospitalRepository" class="careplus.server.repository.InMemoryHospitalRepository" />
+    <bean id="hospitalRepository" class="careplus.server.repository.JdbcHospitalRepository">
+        <constructor-arg value="localhost" />
+        <constructor-arg value="careplus_hospital" />
+        <constructor-arg value="root" />
+        <constructor-arg value="" />
+    </bean>
 
     <bean id="hospitalService" class="careplus.server.HospitalService">
         <constructor-arg ref="hospitalRepository" />

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="careplus.common.model.Complaint" table="complaints">
+        <id name="id" column="complaint_id" type="int">
+            <generator class="native" />
+        </id>
+        <property name="patientId" column="patient_id" type="string" />
+        <property name="category" column="category" type="string" />
+        <property name="description" column="description" type="string" />
+        <property name="dateSubmitted" column="date_submitted" type="java.time.LocalDate" />
+        <property name="status" column="status" type="string" />
+        <property name="assignedEmployeeId" column="assigned_employee_id" type="string" />
+        <property name="response" column="response" type="string" />
+        <property name="responseDate" column="response_date" type="java.time.LocalDate" />
+        <property name="respondedBy" column="responded_by" type="string" />
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,59 @@
+{
+    "version": "0.2.0",
+    "compounds": [
+        {
+            "name": "CarePlus Full Demo - Server + Patient",
+            "configurations": [
+                "CarePlus Server",
+                "CarePlus Patient Client"
+            ],
+            "stopAll": true
+        },
+        {
+            "name": "CarePlus Full Demo - Server + Employee",
+            "configurations": [
+                "CarePlus Server",
+                "CarePlus Employee Client"
+            ],
+            "stopAll": true
+        },
+        {
+            "name": "CarePlus Full Demo - Server + Admin",
+            "configurations": [
+                "CarePlus Server",
+                "CarePlus Admin Client"
+            ],
+            "stopAll": true
+        }
+    ],
+    "configurations": [
+        {
+            "type": "java",
+            "name": "CarePlus Patient Client",
+            "request": "launch",
+            "mainClass": "App",
+            "args": "patient"
+        },
+        {
+            "type": "java",
+            "name": "CarePlus Employee Client",
+            "request": "launch",
+            "mainClass": "App",
+            "args": "employee"
+        },
+        {
+            "type": "java",
+            "name": "CarePlus Admin Client",
+            "request": "launch",
+            "mainClass": "App",
+            "args": "employee"
+        },
+        {
+            "type": "java",
+            "name": "CarePlus Server",
+            "request": "launch",
+            "mainClass": "App",
+            "args": "server"
+        }
+    ]
+}
